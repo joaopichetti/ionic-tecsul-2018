@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{apenasProprios ? 'Meus Anúncios' : 'Anúncios Recentes'}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let anuncio of anuncios">
+    <ion-card-content>
+      <ion-card-title>{{anuncio.marca}} - {{anuncio.modelo}}</ion-card-title>      
+      <p>
+        Placa: {{anuncio.placa}}<br>
+        Ano: {{anuncio.anoFabricacao}}/{{anuncio.anoModelo}}<br>
+        Valor: {{anuncio.valor | currency}}<br>
+        Data do anúncio: {{anuncio.data | date:'dd/MM/yyyy HH:mm:ss'}}<br>
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small (click)="onAnuncioClick(anuncio.chave)">
+          <ion-icon [name]="apenasProprios ? 'create' : 'list'"></ion-icon>
+          {{apenasProprios ? 'Alterar' : 'Detalhes'}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <h3 *ngIf="!anuncios?.length" text-center>Nenhum anúncio cadastrado</h3>
+  <ion-fab right bottom>
+    <button ion-fab (click)="novoAnuncio()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Acessar Sua Conta</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="form" (submit)="acessar()" novalidate>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Seu endereço de email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input formControlName="senha" type="password" placeholder="Sua senha"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit">Acessar</button>    
+  </form>
+  <button ion-button block clear (click)="redefinirSenha()">Esqueci minha senha</button>
+  <button ion-button block clear (click)="criarConta()">Criar conta</button>
+</ion-content>

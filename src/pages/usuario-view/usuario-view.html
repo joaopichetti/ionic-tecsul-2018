@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meu Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <p>Nome</p>
+      <h2>{{(usuario|async)?.nome}}</h2>
+    </ion-item>
+    <ion-item>
+      <p>Telefone</p>
+      <h2>{{(usuario|async)?.telefone}}</h2>
+    </ion-item>
+    <ion-item>
+      <p>e-mail</p>
+      <h2>{{(usuario|async)?.email}}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab (click)="abrirForm()"><ion-icon name="create"></ion-icon></button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{getTitulo()}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!novoAnuncio" (click)="remover()">
+        <ion-icon name="trash"></ion-icon>
+      </button>      
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="form" (submit)="salvar()" novalidate>
+    <ion-item>
+      <ion-label floating>Placa</ion-label>
+      <ion-input type="text" formControlName="placa"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Marca</ion-label>
+      <ion-input type="text" formControlName="marca"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Modelo</ion-label>
+      <ion-input type="text" formControlName="modelo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Ano de fabricação</ion-label>
+      <ion-input type="number" formControlName="anoFabricacao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Ano de modelo</ion-label>
+      <ion-input type="number" formControlName="anoModelo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Valor</ion-label>
+      <ion-input type="number" formControlName="valor"></ion-input>
+    </ion-item>        
+    <ion-item>
+      <ion-label floating>Cor (Opcional)</ion-label>
+      <ion-input type="text" formControlName="cor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Quilometragem (Opcional)</ion-label>
+      <ion-input type="number" formControlName="km"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit">Salvar</button>
+  </form>
+</ion-content>
+
+

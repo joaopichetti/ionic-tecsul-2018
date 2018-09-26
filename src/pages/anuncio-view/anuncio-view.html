@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalhes do Anúncio</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>{{(anuncio|async)?.marca}} - {{(anuncio|async)?.modelo}}</ion-card-title>      
+      <p>
+        Placa: {{(anuncio|async)?.placa}}<br>
+        Ano: {{(anuncio|async)?.anoFabricacao}}/{{(anuncio|async)?.anoModelo}}<br>
+        Valor: {{(anuncio|async)?.valor | currency}}<br>
+        Data do anúncio: {{(anuncio|async)?.data | date:'dd/MM/yyyy HH:mm:ss'}}<br>
+        Cor: {{(anuncio|async)?.cor}}<br>
+        Quilometragem: {{(anuncio|async)?.km}}
+      </p>
+      <hr>
+      <h2>Dados para Contato</h2>
+      Nome: {{(usuario|async)?.nome}}<br>
+      e-mail: {{(usuario|async)?.email}}<br>
+      Telefone: {{(usuario|async)?.telefone}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Redefinir Senha</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="form" (submit)="redefinirSenha()" novalidate>
+    <ion-item>
+      <ion-label stacked>e-Mail</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Seu endereço de email"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit">Enviar e-mail</button>
+  </form>
+</ion-content>

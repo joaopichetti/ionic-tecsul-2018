@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Crie sua conta</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="form" (submit)="criarConta()" novalidate>    
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input formControlName="nome" type="text" placeholder="Seu nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Telefone para contato</ion-label>
+      <ion-input formControlName="telefone" type="phone" placeholder="Seu telefone para contato"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>e-Mail</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Seu endereço de email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input formControlName="senha" type="password" placeholder="Sua senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Confirmação</ion-label>
+      <ion-input formControlName="confirmacao" type="password" placeholder="Confirme sua senha"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit">Criar conta</button>
+  </form>
+</ion-content>

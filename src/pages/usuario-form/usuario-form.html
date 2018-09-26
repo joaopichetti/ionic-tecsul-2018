@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Atualizar Meus Dados</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="form" (submit)="salvar()" novalidate>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input type="phone" formControlName="telefone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>e-mail</ion-label>
+      <ion-input type="email" formControlName="email" disabled="true"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block type="submit">Salvar</button>
+  </form>
+</ion-content>
